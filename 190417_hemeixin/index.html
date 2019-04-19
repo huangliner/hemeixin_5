@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a=[2,3,1,4,7,9];
+			console.log(a.reverse());
+			alert(a);
+			
+			
+			var b =[5,3,1,4,7,9];
+			function bubbleSort(arr){
+				for(i=0;i<arr.length-1;i++){
+					for(j=0;j<arr.length-1-i;j++){
+						if(arr[j]>arr[j+1]){//相邻元素两两对比
+						var temp=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;//元素交换
+					}
+				}
+			  }
+				return arr;
+			}
+			bubbleSort(b);
+			
+			alert(b);
+			
+			
+		</script>
+		
+	</body>
+</html>
