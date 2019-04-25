@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+      function addDigitValue(previousValue, currentDigit, currentIndex, array) {
+       var exponent = (array.length - 1) - currentIndex;
+       var digitValue = currentDigit * Math.pow(10, exponent);
+          return previousValue + digitValue;
+    }
+
+       var arr = [2, 4, 2, 5, 6];
+
+   var result = arr.reduce(addDigitValue, 0);
+
+   console.log(result);
+		
+			
+
+		</script>
+	</body>
+</html>
