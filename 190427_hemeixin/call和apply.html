@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//请利用Math.max()求var a=[1,4,2,6,8,0]这个数组的最大值。
+
+			var a=[1,4,2,6,8,0]
+			Math.max.apply(Math,a)//8
+			
+			//分别使用call和apply求任意一组数的和
+			function f(x,y){
+				return x+y;
+			}function sub(a,b) {
+				return a*b;
+			}
+			alert(f.call(sub,3,4))
+			
+			function fn(x,y){
+				return x+y;
+			}function num(a,b) {
+				return a*b;
+			}
+			alert(fn.apply(num,[3,4]))
+			
+		</script>
+	</body>
+</html>
