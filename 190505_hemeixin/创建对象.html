@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		 //自定义构造函数创建对象
+		 function Person(name,age){
+		 	this.name=name;
+		 	this.age=age;
+		 	this.sayHi=function(){
+		 		console.log("我是："+this.name+",年龄是："+this.age);
+		 	};
+		 }
+		 
+		 //创建对象
+		 var obj = new Person("苏苏",10);
+		 console.log(obj.name);
+		 console.log(obj.age);
+		 obj.sayHi();
+			
+		</script>
+	</body>
+</html>
