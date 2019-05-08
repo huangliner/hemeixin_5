@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="box" style="overflow:hidden;height:960PX;width:480px;border: 1px solid red;">
+			<div id="box1">
+				<div id="box_bottom" style="overflow:hidden;">
+					<div id="box_bottom1">
+						<p><img src="img/详情页设计.png"></p>
+							<!--<p><img src="img/1.png"></p>
+							<p><img src="img/2.png"></p>
+							<p><img src="img/3.png"></p>
+							<p><img src="img/1.png"></p>-->
+						<div id="box2">
+			</div>
+
+		</div>
+	<script>
+		var speed=20;
+		var box2=document.getElementById("box2");
+		var box1=document.getElementById("box1");
+		var box=document.getElementById("box");
+		
+		function MyImg1(){
+				if(box2.offsetTop-box.scrollTop<=1){//offsetWidth 是对象的可见宽度
+		 				box.scrollTop-=box1.offsetHeight; //对象的实际内容的宽，不包边线宽度
+		 				}else{
+		 					box.scrollTop++;
+						}
+					}
+				var MyMar1=setInterval(MyImg1,speed);
+				//鼠标移入时清除定时器达到滚动停止
+				box.onmouseover=function() {clearInterval(MyMar1)};
+				//鼠标移开时重设定时器
+				box.onmouseout=function(){MyMar1=setInterval(MyImg1,speed)};
+		
+				
+	</script>
+		
+	</body>
+</html>
