@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body onload="countTime()">
+		<div> 
+			<font>剩余</font>
+			<font id="dd">00</font> 
+			<font id="hh">00</font> 
+			<font id="mm">00</font>
+			<font id="ss">00</font> 
+		</div> 
+	
+	<script>
+		function countTime(){
+			var date = new Date();
+			var now = date.getTime();
+			var str="2019/5/15 00:00:00";
+			var nowDate = new Date(str);
+			var end = nowDate.getTime();
+			var leftTime = end-now;
+			 
+			var d,h,m,s;
+				if (leftTime>=0){
+				 d = Math.floor(leftTime/1000/60/60/24);
+				 h = Math.floor(leftTime/1000/60/60%24);
+				 m = Math.floor(leftTime/1000/60%60);
+				 s = Math.floor(leftTime/1000%60);
+				}
+				 	d = checkTime(d);
+				 	h = checkTime(h);
+				 	m = checkTime(m);
+				   	s = checkTime(s);
+				   
+				    function checkTime(i){
+				    	if (i<10) {
+				    		i = "0"+i;
+				    	}
+				    	return i;
+				    }
+				     document.getElementById("dd").innerHTML = d+"天"; 
+				     document.getElementById("hh").innerHTML = h+"时"; 
+				     document.getElementById("mm").innerHTML = m+"分";
+				     document.getElementById("ss").innerHTML = s+"秒";
+				      setTimeout(countTime,1000); 
+	//				document.getElementById("countTime").innerHTML = dd + "天" + hh + "时" + mm + "分" + ss + "秒";
+	//				setInterval("countTime()",1000);
+			}
+
+	</script>
+	</body>
+</html>
