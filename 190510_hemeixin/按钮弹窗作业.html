@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body >
+				
+	
+		<input type="button" value="1" />
+		<input type="button" value="2" />
+		<input type="button" value="3" />
+		<input type="button" value="4" />
+		<input type="button" value="5" />
+		<input type="button" value="6" />
+		
+		<script type="text/javascript">
+				//返回文档中匹配指定 CSS 选择器的所有元素
+			var btn= document.querySelectorAll("input");
+			for(var i = 0; i < btn.length; i++){
+				//使用 removeEventListener() 方法来移除 addEventListener() 方法添加的事件句柄
+				btn[i].addEventListener("click", (function(i){
+					return function(){
+					alert(i+1);
+					}
+				})(i));
+			}
+		</script>
+	</body>
+</html>
