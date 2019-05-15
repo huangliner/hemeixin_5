@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box {
+            width: 300px;
+            height: 130px;
+            border: 1px solid #e2e2e2;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .lis {
+            width: 100%;
+            height: 50px;
+            display: flex;
+             background: #f7f7f7;
+        }
+        .lis li {
+            width: 25%;
+            line-height: 50px;
+            border: 1px solid #e2e2e2;
+        }
+        .lis li.active{
+            background: #ddd;
+            color: #fff;
+        }
+        .content {
+            position: relative;
+        }
+        .content li {
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            display: none;
+        }
+        .content li.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="lis">
+            <li class="active">公告</li>
+            <li>规则</li>
+            <li>论坛</li>
+            <li>安全</li>
+            <li>公益</li>
+        </ul>
+        <ul class="content">
+            <li class="active">这个公告的</li>
+            <li>这个规划的</li>
+            <li>这个论坛的</li>
+            <li>这个安全的</li>
+             <li>这个公益的</li>
+        </ul>
+    </div>
+</body>
+
+                                
+ 	<!--  js部分的代码  -->
+	<script>
+	    var lis = document.querySelectorAll(".lis li");
+	    var content = document.querySelectorAll(".content li");
+	    var n = 0;
+	    lis.forEach(function (ele,index) {
+	        ele.onclick = function () {
+	            n = index;
+	            //循环去掉所有标题的选中样式和对应内容的层级
+	            for (let i = 0; i < lis.length; i++) {
+	                lis[i].classList.remove("active");
+	                content[i].classList.remove("active");
+	            }
+	            ele.classList.add("active");
+	            content[n].classList.add("active");
+	        }
+	    })
+	</script>
+
+	</body>
+</html>
